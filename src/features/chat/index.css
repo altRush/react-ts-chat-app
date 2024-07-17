@@ -1,0 +1,33 @@
+.chat-box {
+  width: 300px;
+  position: fixed;
+  bottom: 0px;
+  right: 50px;
+}
+
+.chat-box-title {
+  background-color: rgb(255, 123, 0);
+  font-weight: bold;
+  font-size: x-large;
+  text-align: center;
+}
+
+.chat-box-body {
+  height: 380px;
+  background-color: rgb(255, 243, 232);
+  color: black;
+  padding: 20px;
+}
+
+.chat-logo {
+  height: 250px;
+  margin: 30px;
+}
+
+.talk-logo {
+  color: rgb(255, 123, 0);
+}
+
+h3 {
+  margin-left: 30px;
+}
