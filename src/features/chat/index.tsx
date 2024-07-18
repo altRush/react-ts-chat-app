@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { KeyboardEventHandler, useCallback, useEffect, useState } from 'react';
 import './index.css';
 import useWebSocket from 'react-use-websocket';
 import { WebSocketMessage } from 'react-use-websocket/dist/lib/types';
@@ -22,6 +22,20 @@ const ChatBox = () => {
 		(message: WebSocketMessage) => sendMessage(message),
 		[sendMessage]
 	);
+
+	const handleKeyDown = (e: KeyboardEvent) => {
+		if (e.key === 'Enter') {
+			if (chatText) {
+				handleClickSendMessage(
+					JSON.stringify({
+						sender,
+						messageText: chatText
+					})
+				);
+				setChatText('');
+			}
+		}
+	};
 
 	const isSender = (incomingSender: string): boolean => {
 		return sender === incomingSender;
@@ -72,6 +86,7 @@ const ChatBox = () => {
 							onChange={e => setChatText(e.target.value)}
 							placeholder="..what's on your mind?"
 							type="text"
+							onKeyDown={handleKeyDown as unknown as KeyboardEventHandler}
 						/>
 					</div>
 					<div>
