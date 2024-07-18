@@ -10,6 +10,7 @@
   font-weight: bold;
   font-size: x-large;
   text-align: center;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .chat-box-body {
@@ -24,10 +25,51 @@
   margin: 30px;
 }
 
+.chat-box-input {
+  background-color: rgb(77, 77, 77);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.chat-box-input > div:first-child {
+  all: unset;
+  width: 100%;
+  margin: 2px;
+  padding: 0;
+}
+
+.chat-box-input input {
+  all: unset;
+  background-color: #ffebd1;
+  width: 100%;
+  margin: 2px;
+  padding: 0;
+  color: black;
+  border-radius: 2px;
+}
+
 .talk-logo {
   color: rgb(255, 123, 0);
 }
 
+.chat-box-input > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.send-message-icon {
+  width: 24px;
+}
+
 h3 {
   margin-left: 30px;
+}
+
+.sender-text{
+  text-align: right;
+  color: rgb(231, 85, 0)
 }
